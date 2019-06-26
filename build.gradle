@@ -1,0 +1,22 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'br.com.upbox.ftp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'org.apache.ftpserver', name: 'ftpserver-core', version: '1.1.1'
+	compile group: 'org.mindrot', name: 'jbcrypt', version: '0.4'
+
+}
