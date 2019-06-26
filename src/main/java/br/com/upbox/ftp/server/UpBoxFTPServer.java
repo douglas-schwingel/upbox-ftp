@@ -1,13 +1,12 @@
 package br.com.upbox.ftp.server;
 
+import br.com.upbox.ftp.ftplet.MyFtplet;
 import org.apache.ftpserver.ConnectionConfigFactory;
 import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
-import org.apache.ftpserver.ftplet.Authority;
 import org.apache.ftpserver.ftplet.FtpException;
-import org.apache.ftpserver.ftplet.UserManager;
+import org.apache.ftpserver.ftplet.Ftplet;
 import org.apache.ftpserver.listener.ListenerFactory;
-import org.apache.ftpserver.ssl.SslConfigurationFactory;
 import org.apache.ftpserver.usermanager.PropertiesUserManagerFactory;
 import org.apache.ftpserver.usermanager.impl.BaseUser;
 import org.mindrot.jbcrypt.BCrypt;
@@ -17,8 +16,8 @@ import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UpBoxFTPServer implements FTPServerConstants {
     private static final Logger logger = LoggerFactory.getLogger(FtpServer.class);
@@ -67,8 +66,10 @@ public class UpBoxFTPServer implements FTPServerConstants {
         userManagerFactory.setFile(new File("myuser.properties"));
         MyPasswordEncryptor passwordEncryptor = new MyPasswordEncryptor();
         userManagerFactory.setPasswordEncryptor(passwordEncryptor);
-
+        Map<String, Ftplet> map = new HashMap<>();
+        map.put("myftplet", new MyFtplet());
         //Settando as configurações no ServerFactory
+        serverFactory.setFtplets(map);
         serverFactory.addListener("default", listenerFactory.createListener());
         serverFactory.setConnectionConfig(connectionConfigFactory.createConnectionConfig());
         serverFactory.setUserManager(userManager);
@@ -84,7 +85,7 @@ public class UpBoxFTPServer implements FTPServerConstants {
     }
 
     public void stop() {
-        if(server != null && !server.isStopped()) {
+        if (server != null && !server.isStopped()) {
             server.stop();
             server = null;
         }
@@ -93,8 +94,8 @@ public class UpBoxFTPServer implements FTPServerConstants {
     public void criarUsuario(String username, String password) {
         BaseUser user = new BaseUser();
         user.setName(username);
-        if (password != null && password.length()>0) user.setPassword(hashPassword(password));
-        user.setHomeDirectory(System.getProperty("user.home")+ "/upbox-files/" + username);
+        if (password != null && password.length() > 0) user.setPassword(hashPassword(password));
+        user.setHomeDirectory(System.getProperty("user.home") + "/upbox-files/" + username);
         user.setEnabled(true);
         userManager.setUser(user);
     }
