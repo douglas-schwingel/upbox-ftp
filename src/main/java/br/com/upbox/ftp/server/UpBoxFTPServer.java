@@ -6,16 +6,15 @@ import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
 import org.apache.ftpserver.ftplet.FtpException;
 import org.apache.ftpserver.ftplet.Ftplet;
+import org.apache.ftpserver.ftplet.UserManager;
 import org.apache.ftpserver.listener.ListenerFactory;
-import org.apache.ftpserver.usermanager.PropertiesUserManagerFactory;
-import org.apache.ftpserver.usermanager.impl.BaseUser;
-import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,18 +26,20 @@ public class UpBoxFTPServer implements FTPServerConstants {
     private FtpServerFactory serverFactory;
     private FtpServer server;
     private static int port;
-    private InMemoryUserManager userManager;
+
+    @Autowired
+    private UserManager userManager;
 
     public UpBoxFTPServer() {
         port = 21;
-        userManager = new InMemoryUserManager();
     }
+
 
     public void setPort(int port) {
         this.port = port;
     }
 
-    public boolean start() throws FtpException {
+    public boolean start() throws FtpException, IOException {
         serverFactory = new FtpServerFactory();
 
 
@@ -62,13 +63,9 @@ public class UpBoxFTPServer implements FTPServerConstants {
         connectionConfigFactory.setMaxThreads(10);
 
 
-        PropertiesUserManagerFactory userManagerFactory = new PropertiesUserManagerFactory();
-        userManagerFactory.setFile(new File("myuser.properties"));
-        MyPasswordEncryptor passwordEncryptor = new MyPasswordEncryptor();
-        userManagerFactory.setPasswordEncryptor(passwordEncryptor);
         Map<String, Ftplet> map = new HashMap<>();
         map.put("myftplet", new MyFtplet());
-        //Settando as configurações no ServerFactory
+//        Settando as configurações no ServerFactory
         serverFactory.setFtplets(map);
         serverFactory.addListener("default", listenerFactory.createListener());
         serverFactory.setConnectionConfig(connectionConfigFactory.createConnectionConfig());
@@ -84,6 +81,8 @@ public class UpBoxFTPServer implements FTPServerConstants {
         return true;
     }
 
+
+
     public void stop() {
         if (server != null && !server.isStopped()) {
             server.stop();
@@ -91,18 +90,19 @@ public class UpBoxFTPServer implements FTPServerConstants {
         }
     }
 
-    public void criarUsuario(String username, String password) {
-        BaseUser user = new BaseUser();
-        user.setName(username);
-        if (password != null && password.length() > 0) user.setPassword(hashPassword(password));
-        user.setHomeDirectory(System.getProperty("user.home") + "/upbox-files/" + username);
-        user.setEnabled(true);
-        userManager.setUser(user);
-    }
+//    public void criarUsuario(String username, String password) {
+//        BaseUser user = new BaseUser();
+//        user.setName(username);
+//        if (password != null && password.length() > 0) user.setPassword(hashPassword(password));
+//        user.setHomeDirectory(System.getProperty("user.home") + "/upbox-files/" + username);
+//        user.setEnabled(true);
+//        try {
+//            userManager.save(user);
+//        } catch (FtpException e) {
+//            logger.error(marker, "Erro {} ao adiciona o usuario {}", e.getMessage(), user.getName());
+//        }
+//    }
 
-    private String hashPassword(String password) {
-        String salto = BCrypt.gensalt();
-        return BCrypt.hashpw(password, salto);
-    }
+
 
 }

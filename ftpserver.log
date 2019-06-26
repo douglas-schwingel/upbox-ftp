@@ -1,0 +1,260 @@
+2019-06-26 11:40:33.083  INFO 23587 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 23587 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 11:40:33.084  INFO 23587 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 11:40:33.728  INFO 23587 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 11:40:33.741  INFO 23587 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-06-26 11:40:36.560  INFO 23587 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 11:40:36.696  INFO 23587 --- [cluster-ClusterId{value='5d1383e4479b035c238a5d0f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2019-06-26 11:40:36.730  INFO 23587 --- [cluster-ClusterId{value='5d1383e4479b035c238a5d0f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=14214820}
+2019-06-26 11:40:37.018  INFO 23587 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 4.829 seconds (JVM running for 5.971)
+2019-06-26 11:45:07.643  INFO 23956 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 23956 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 11:45:07.646  INFO 23956 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 11:45:08.152  INFO 23956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 11:45:08.175  INFO 23956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-06-26 11:45:08.598  INFO 23956 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 11:45:08.701  INFO 23956 --- [cluster-ClusterId{value='5d1384f4479b035d943981e0', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+2019-06-26 11:45:08.719  INFO 23956 --- [cluster-ClusterId{value='5d1384f4479b035d943981e0', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3599080}
+2019-06-26 11:45:08.856  INFO 23956 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.577 seconds (JVM running for 2.349)
+2019-06-26 11:45:09.018  INFO 23956 --- [main] br.com.upbox.ftp.ftplet.MyFtplet         : Iniciando o MyFtplet
+2019-06-26 11:45:09.018  INFO 23956 --- [main] o.a.ftpserver.impl.DefaultFtpServer      : FTP server started
+2019-06-26 11:45:58.695  INFO 24058 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 24058 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 11:45:58.699  INFO 24058 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 11:45:59.236  INFO 24058 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 11:45:59.253  INFO 24058 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2019-06-26 11:45:59.696  INFO 24058 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 11:45:59.729  INFO 24058 --- [cluster-ClusterId{value='5d138527479b035dfa2a2b9a', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:4}] to localhost:27017
+2019-06-26 11:45:59.733  INFO 24058 --- [cluster-ClusterId{value='5d138527479b035dfa2a2b9a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1786140}
+2019-06-26 11:45:59.866  INFO 24058 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.529 seconds (JVM running for 2.279)
+2019-06-26 11:46:00.029  INFO 24058 --- [main] br.com.upbox.ftp.ftplet.MyFtplet         : Iniciando o MyFtplet
+2019-06-26 11:46:00.030  INFO 24058 --- [main] o.a.ftpserver.impl.DefaultFtpServer      : FTP server started
+2019-06-26 12:08:14.537  INFO 24576 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 24576 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 12:08:14.539  INFO 24576 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 12:08:15.133  INFO 24576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 12:08:15.147  INFO 24576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-06-26 12:08:15.547  INFO 24576 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 12:08:15.581  INFO 24576 --- [cluster-ClusterId{value='5d138a5f479b036000ef3fff', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5}] to localhost:27017
+2019-06-26 12:08:15.597  INFO 24576 --- [cluster-ClusterId{value='5d138a5f479b036000ef3fff', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=13927238}
+2019-06-26 12:08:15.741  INFO 24576 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.582 seconds (JVM running for 2.439)
+2019-06-26 12:17:33.131  INFO 24799 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 24799 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 12:17:33.134  INFO 24799 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 12:17:33.638  INFO 24799 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 12:17:33.653  INFO 24799 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-06-26 12:17:34.161  INFO 24799 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 12:17:34.201  INFO 24799 --- [cluster-ClusterId{value='5d138c8e479b0360df29f22f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:6}] to localhost:27017
+2019-06-26 12:17:34.206  INFO 24799 --- [cluster-ClusterId{value='5d138c8e479b0360df29f22f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2370442}
+2019-06-26 12:17:34.339  INFO 24799 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.56 seconds (JVM running for 2.388)
+2019-06-26 12:19:47.695  INFO 25106 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 25106 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 12:19:47.699  INFO 25106 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 12:19:48.265  INFO 25106 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 12:19:48.283  INFO 25106 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2019-06-26 12:19:48.699  INFO 25106 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 12:19:48.759  INFO 25106 --- [cluster-ClusterId{value='5d138d14479b036212c7f14a', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:7}] to localhost:27017
+2019-06-26 12:19:48.764  INFO 25106 --- [cluster-ClusterId{value='5d138d14479b036212c7f14a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2892799}
+2019-06-26 12:19:48.930  INFO 25106 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.575 seconds (JVM running for 2.364)
+2019-06-26 12:19:48.979  INFO 25106 --- [main] o.a.ftpserver.impl.DefaultFtpServer      : FTP server started
+2019-06-26 12:20:20.158  INFO 25106 --- [NioProcessor-3] o.a.f.listener.nio.FtpLoggingFilter      : CREATED
+2019-06-26 12:20:20.161  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : OPENED
+2019-06-26 12:20:20.166  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 220 Service ready for new user.
+
+2019-06-26 12:20:20.168  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: AUTH TLS
+2019-06-26 12:20:20.170  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 431 Service is unavailable.
+
+2019-06-26 12:20:20.170  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: AUTH SSL
+2019-06-26 12:20:20.171  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 431 Service is unavailable.
+
+2019-06-26 12:20:20.172  INFO 25106 --- [pool-3-thread-2] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: USER teste
+2019-06-26 12:20:20.173  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 331 User name okay, need password for teste.
+
+2019-06-26 12:20:20.174  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: PASS *****
+2019-06-26 12:20:20.175  WARN 25106 --- [pool-3-thread-1] org.apache.ftpserver.command.impl.PASS   : User failed to log in
+2019-06-26 12:20:20.676  WARN 25106 --- [pool-3-thread-1] org.apache.ftpserver.command.impl.PASS   : Login failure - teste
+2019-06-26 12:20:20.679  INFO 25106 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 530 Authentication failed.
+
+2019-06-26 12:20:20.681  INFO 25106 --- [pool-3-thread-2] o.a.f.listener.nio.FtpLoggingFilter      : CLOSED
+2019-06-26 12:22:15.305  INFO 25106 --- [NioProcessor-4] o.a.f.listener.nio.FtpLoggingFilter      : CREATED
+2019-06-26 12:22:15.307  INFO 25106 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : OPENED
+2019-06-26 12:22:15.311  INFO 25106 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 220 Service ready for new user.
+
+2019-06-26 12:22:15.313  INFO 25106 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: AUTH TLS
+2019-06-26 12:22:15.314  INFO 25106 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 431 Service is unavailable.
+
+2019-06-26 12:22:15.316  INFO 25106 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: AUTH SSL
+2019-06-26 12:22:15.317  INFO 25106 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 431 Service is unavailable.
+
+2019-06-26 12:22:15.318  INFO 25106 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: USER teste
+2019-06-26 12:22:15.320  INFO 25106 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 331 User name okay, need password for teste.
+
+2019-06-26 12:22:15.321  INFO 25106 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: PASS *****
+2019-06-26 12:22:15.322  WARN 25106 --- [pool-3-thread-3] org.apache.ftpserver.command.impl.PASS   : User failed to log in
+2019-06-26 12:22:15.822  WARN 25106 --- [pool-3-thread-3] org.apache.ftpserver.command.impl.PASS   : Login failure - teste
+2019-06-26 12:22:15.824  INFO 25106 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 530 Authentication failed.
+
+2019-06-26 12:22:15.825  INFO 25106 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : CLOSED
+2019-06-26 12:25:38.433  INFO 25418 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 25418 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 12:25:38.440  INFO 25418 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 12:25:38.983  INFO 25418 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 12:25:38.998  INFO 25418 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-06-26 12:25:39.538  INFO 25418 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 12:25:39.586  INFO 25418 --- [cluster-ClusterId{value='5d138e73479b03634a12053f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:8}] to localhost:27017
+2019-06-26 12:25:39.595  INFO 25418 --- [cluster-ClusterId{value='5d138e73479b03634a12053f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2196616}
+2019-06-26 12:25:39.761  INFO 25418 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.854 seconds (JVM running for 2.793)
+2019-06-26 12:25:39.825  INFO 25418 --- [main] o.a.ftpserver.impl.DefaultFtpServer      : FTP server started
+2019-06-26 12:26:58.927  INFO 25418 --- [NioProcessor-3] o.a.f.listener.nio.FtpLoggingFilter      : CREATED
+2019-06-26 12:26:58.942  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : OPENED
+2019-06-26 12:26:58.952  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 220 Service ready for new user.
+
+2019-06-26 12:26:58.953  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: USER teste
+2019-06-26 12:26:58.954  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 331 User name okay, need password for teste.
+
+2019-06-26 12:26:58.955  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: PASS 
+2019-06-26 12:26:58.957  WARN 25418 --- [pool-3-thread-1] org.apache.ftpserver.command.impl.PASS   : User failed to log in
+2019-06-26 12:26:59.457  WARN 25418 --- [pool-3-thread-1] org.apache.ftpserver.command.impl.PASS   : Login failure - teste
+2019-06-26 12:26:59.458  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 530 Authentication failed.
+
+2019-06-26 12:26:59.458  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: QUIT
+2019-06-26 12:26:59.460  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 221 Goodbye.
+
+2019-06-26 12:26:59.460  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : CLOSED
+2019-06-26 12:27:06.603  INFO 25418 --- [NioProcessor-4] o.a.f.listener.nio.FtpLoggingFilter      : CREATED
+2019-06-26 12:27:06.605  INFO 25418 --- [pool-3-thread-2] o.a.f.listener.nio.FtpLoggingFilter      : OPENED
+2019-06-26 12:27:06.607  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 220 Service ready for new user.
+
+2019-06-26 12:27:06.607  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: USER teste
+2019-06-26 12:27:06.608  INFO 25418 --- [pool-3-thread-2] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 331 User name okay, need password for teste.
+
+2019-06-26 12:27:06.609  INFO 25418 --- [pool-3-thread-2] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: PASS *****
+2019-06-26 12:27:06.609  WARN 25418 --- [pool-3-thread-2] org.apache.ftpserver.command.impl.PASS   : User failed to log in
+2019-06-26 12:27:07.109  WARN 25418 --- [pool-3-thread-2] org.apache.ftpserver.command.impl.PASS   : Login failure - teste
+2019-06-26 12:27:07.111  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 530 Authentication failed.
+
+2019-06-26 12:27:07.113  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: QUIT
+2019-06-26 12:27:07.116  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 221 Goodbye.
+
+2019-06-26 12:27:07.117  INFO 25418 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : CLOSED
+2019-06-26 12:29:13.081  INFO 25418 --- [NioProcessor-1] o.a.f.listener.nio.FtpLoggingFilter      : CREATED
+2019-06-26 12:29:13.083  INFO 25418 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : OPENED
+2019-06-26 12:29:13.100  INFO 25418 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: USER teste
+2019-06-26 12:29:13.101  INFO 25418 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 220 Service ready for new user.
+
+2019-06-26 12:29:13.101  INFO 25418 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 331 User name okay, need password for teste.
+
+2019-06-26 12:29:13.101  INFO 25418 --- [pool-3-thread-3] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: PASS *****
+2019-06-26 12:29:13.102  WARN 25418 --- [pool-3-thread-3] org.apache.ftpserver.command.impl.PASS   : User failed to log in
+2019-06-26 12:29:13.602  WARN 25418 --- [pool-3-thread-3] org.apache.ftpserver.command.impl.PASS   : Login failure - teste
+2019-06-26 12:29:13.603  INFO 25418 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 530 Authentication failed.
+
+2019-06-26 12:29:13.604  INFO 25418 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : RECEIVED: QUIT
+2019-06-26 12:29:13.607  INFO 25418 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : SENT: 221 Goodbye.
+
+2019-06-26 12:29:13.608  INFO 25418 --- [pool-3-thread-4] o.a.f.listener.nio.FtpLoggingFilter      : CLOSED
+2019-06-26 12:39:42.915  INFO 26274 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 26274 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 12:39:42.919  INFO 26274 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 12:39:43.770  INFO 26274 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 12:39:43.795  INFO 26274 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-06-26 12:39:44.009  WARN 26274 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'usuarioDTO': Unsatisfied dependency expressed through field 'userManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.apache.ftpserver.ftplet.UserManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-06-26 12:39:44.017  INFO 26274 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-06-26 12:39:44.268 ERROR 26274 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userManager in br.com.upbox.ftp.models.UsuarioDTO required a bean of type 'org.apache.ftpserver.ftplet.UserManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.apache.ftpserver.ftplet.UserManager' in your configuration.
+
+2019-06-26 12:40:23.203  INFO 26369 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 26369 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 12:40:23.206  INFO 26369 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 12:40:23.791  INFO 26369 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 12:40:23.814  INFO 26369 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-06-26 12:40:23.959  WARN 26369 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'usuarioDTO': Unsatisfied dependency expressed through field 'userManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.apache.ftpserver.ftplet.UserManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-06-26 12:40:23.970  INFO 26369 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-06-26 12:40:24.126 ERROR 26369 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userManager in br.com.upbox.ftp.models.UsuarioDTO required a bean of type 'org.apache.ftpserver.ftplet.UserManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.apache.ftpserver.ftplet.UserManager' in your configuration.
+
+2019-06-26 13:21:12.929  INFO 29413 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 29413 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 13:21:12.949  INFO 29413 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 13:21:13.335  INFO 29413 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 13:21:13.352  INFO 29413 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2019-06-26 13:21:15.031  INFO 29413 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 13:21:15.087  INFO 29413 --- [cluster-ClusterId{value='5d139b7b479b0372e5351d5e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:9}] to localhost:27017
+2019-06-26 13:21:15.110  INFO 29413 --- [cluster-ClusterId{value='5d139b7b479b0372e5351d5e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=10866670}
+2019-06-26 13:21:15.518  INFO 29413 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 2.929 seconds (JVM running for 3.795)
+2019-06-26 13:22:12.962  INFO 29592 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 29592 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 13:22:12.966  INFO 29592 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 13:22:13.469  INFO 29592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 13:22:13.484  INFO 29592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-06-26 13:22:13.873  INFO 29592 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 13:22:13.924  INFO 29592 --- [cluster-ClusterId{value='5d139bb5479b037398f74499', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:10}] to localhost:27017
+2019-06-26 13:22:13.928  INFO 29592 --- [cluster-ClusterId{value='5d139bb5479b037398f74499', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2217963}
+2019-06-26 13:22:14.061  INFO 29592 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.432 seconds (JVM running for 2.318)
+2019-06-26 13:22:46.372  INFO 29679 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 29679 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 13:22:46.374  INFO 29679 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 13:22:46.848  INFO 29679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 13:22:46.866  INFO 29679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2019-06-26 13:22:47.261  INFO 29679 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 13:22:47.326  INFO 29679 --- [cluster-ClusterId{value='5d139bd7479b0373efa04775', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:11}] to localhost:27017
+2019-06-26 13:22:47.359  INFO 29679 --- [cluster-ClusterId{value='5d139bd7479b0373efa04775', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2429549}
+2019-06-26 13:22:47.504  INFO 29679 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.476 seconds (JVM running for 2.301)
+2019-06-26 13:22:47.579  INFO 29679 --- [main] br.com.upbox.ftp.ftplet.MyFtplet         : Iniciando o MyFtplet
+2019-06-26 13:22:47.579  INFO 29679 --- [main] o.a.ftpserver.impl.DefaultFtpServer      : FTP server started
+2019-06-26 13:23:05.282  INFO 29679 --- [NioProcessor-3] o.a.f.listener.nio.FtpLoggingFilter      : CREATED
+2019-06-26 13:23:05.286  INFO 29679 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : OPENED
+2019-06-26 13:23:05.290  INFO 29679 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : CLOSED
+2019-06-26 13:24:21.963  INFO 29802 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 29802 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 13:24:21.966  INFO 29802 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 13:24:22.439  INFO 29802 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 13:24:22.456  INFO 29802 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2019-06-26 13:24:22.940  INFO 29802 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 13:24:22.998  INFO 29802 --- [cluster-ClusterId{value='5d139c36479b03746a21f90f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:12}] to localhost:27017
+2019-06-26 13:24:23.007  INFO 29802 --- [cluster-ClusterId{value='5d139c36479b03746a21f90f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2323102}
+2019-06-26 13:24:23.186  INFO 29802 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 1.569 seconds (JVM running for 2.337)
+2019-06-26 13:24:23.244  INFO 29802 --- [main] br.com.upbox.ftp.ftplet.MyFtplet         : Iniciando o MyFtplet
+2019-06-26 13:24:23.244  INFO 29802 --- [main] o.a.ftpserver.impl.DefaultFtpServer      : FTP server started
+2019-06-26 13:24:34.322  INFO 29802 --- [NioProcessor-3] o.a.f.listener.nio.FtpLoggingFilter      : CREATED
+2019-06-26 13:24:34.330  INFO 29802 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : OPENED
+2019-06-26 13:24:34.333  INFO 29802 --- [pool-3-thread-1] o.a.f.listener.nio.FtpLoggingFilter      : CLOSED
+2019-06-26 13:46:50.991  INFO 31687 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Starting UpboxFtpApplication on forttiori with PID 31687 (/home/forttiori/workspace/upbox-ftp/out/production/classes started by forttiori in /home/forttiori/workspace/upbox-ftp)
+2019-06-26 13:46:51.016  INFO 31687 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : No active profile set, falling back to default profiles: default
+2019-06-26 13:46:52.674  INFO 31687 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-26 13:46:52.718  INFO 31687 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-06-26 13:46:53.316  INFO 31687 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-26 13:46:53.369  INFO 31687 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-26 13:46:53.370  INFO 31687 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-06-26 13:46:53.539  INFO 31687 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-26 13:46:53.539  INFO 31687 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2459 ms
+2019-06-26 13:46:54.015  INFO 31687 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-26 13:46:54.492  INFO 31687 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-06-26 13:46:54.955  INFO 31687 --- [cluster-ClusterId{value='5d13a17e479b037bc7e10c8b', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:13}] to localhost:27017
+2019-06-26 13:46:54.959  INFO 31687 --- [cluster-ClusterId{value='5d13a17e479b037bc7e10c8b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 3]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2515896}
+2019-06-26 13:46:55.113  INFO 31687 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-26 13:46:55.129  INFO 31687 --- [main] b.c.u.ftp.upboxftp.UpboxFtpApplication   : Started UpboxFtpApplication in 5.079 seconds (JVM running for 7.345)
+2019-06-26 13:46:55.418  INFO 31687 --- [main] br.com.upbox.ftp.ftplet.MyFtplet         : Iniciando o MyFtplet
+2019-06-26 13:46:55.419  INFO 31687 --- [main] o.a.ftpserver.impl.DefaultFtpServer      : FTP server started
+2019-06-26 14:01:26.422  INFO 31687 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
