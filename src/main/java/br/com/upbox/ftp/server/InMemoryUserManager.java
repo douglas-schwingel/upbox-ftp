@@ -53,7 +53,13 @@ public class InMemoryUserManager implements UserManager {
         user.setName(nome);
         user.setPassword(hashPassword(password));
         if (!Files.exists(Path.of(userDir(nome)))) {
-            Runtime.getRuntime().exec("mkdir" + )
+            try {
+                Runtime.getRuntime().exec("mkdir " + userDir(nome));
+                logger.info(marker, "Usuario criado o diretório do usuario {}", nome);
+            } catch (IOException e) {
+                logger.error(marker, "Erro ao tentar criar diretório para usuario {}", nome);
+                e.printStackTrace();
+            }
         }
         user.setHomeDirectory(userDir(nome));
         user.setEnabled(true);
@@ -73,7 +79,7 @@ public class InMemoryUserManager implements UserManager {
         }
     }
 
-    private String userDir(String nome) {
+    public String userDir(String nome) {
         return System.getProperty("user.home") + "/upbox-files/" + nome;
     }
 

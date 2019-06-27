@@ -8,12 +8,14 @@ import org.apache.ftpserver.ftplet.FtpException;
 import org.apache.ftpserver.ftplet.Ftplet;
 import org.apache.ftpserver.ftplet.UserManager;
 import org.apache.ftpserver.listener.ListenerFactory;
+import org.apache.ftpserver.ssl.SslConfigurationFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +33,7 @@ public class UpBoxFTPServer implements FTPServerConstants {
     private UserManager userManager;
 
     public UpBoxFTPServer() {
-        port = 21;
+        port = 2112;
     }
 
 
@@ -43,17 +45,10 @@ public class UpBoxFTPServer implements FTPServerConstants {
         serverFactory = new FtpServerFactory();
 
 
-        //          Habilitar FTPS
-//        SslConfigurationFactory sslConfig = new SslConfigurationFactory();
-//        sslConfig.setKeystoreFile(new File(KEYS_PATH));
-//        sslConfig.setKeystorePassword(KEYSTORE_PASS);
-
         // Configurar listener
         ListenerFactory listenerFactory = new ListenerFactory();
         listenerFactory.setPort(port);
         listenerFactory.setIdleTimeout(60);
-//        listenerFactory.setSslConfiguration(sslConfig.createSslConfiguration());
-//        listenerFactory.setImplicitSsl(true);
 
 
         // Configurar conexão
@@ -89,20 +84,5 @@ public class UpBoxFTPServer implements FTPServerConstants {
             server = null;
         }
     }
-
-//    public void criarUsuario(String username, String password) {
-//        BaseUser user = new BaseUser();
-//        user.setName(username);
-//        if (password != null && password.length() > 0) user.setPassword(hashPassword(password));
-//        user.setHomeDirectory(System.getProperty("user.home") + "/upbox-files/" + username);
-//        user.setEnabled(true);
-//        try {
-//            userManager.save(user);
-//        } catch (FtpException e) {
-//            logger.error(marker, "Erro {} ao adiciona o usuario {}", e.getMessage(), user.getName());
-//        }
-//    }
-
-
 
 }

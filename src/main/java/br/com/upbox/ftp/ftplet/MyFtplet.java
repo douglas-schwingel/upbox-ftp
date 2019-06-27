@@ -7,9 +7,11 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+@Component
 public class MyFtplet extends DefaultFtplet {
     private static final Logger logger = LoggerFactory.getLogger(MyFtplet.class);
     private static final Marker marker = MarkerFactory.getMarker("my-ftplet");
@@ -34,5 +36,10 @@ public class MyFtplet extends DefaultFtplet {
         logger.info(marker, "Entrando no connect com usuario {}", user.getName());
         userManager.setUser(user.getName(), user.getPassword());
         return super.onConnect(session);
+    }
+
+    @Override
+    public FtpletResult onDeleteStart(FtpSession session, FtpRequest request) throws FtpException, IOException {
+        return super.onDeleteStart(session, request);
     }
 }
