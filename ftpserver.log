@@ -162,7 +162,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field userManager in br.com.upbox.ftp.models.UsuarioDTO required a bean of type 'org.apache.ftpserver.ftplet.UserManager' that could not be found.
+Field userManager in br.com.upbox.ftp.utilsUsuarioDTO required a bean of type 'org.apache.ftpserver.ftplet.UserManager' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -188,7 +188,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field userManager in br.com.upbox.ftp.models.UsuarioDTO required a bean of type 'org.apache.ftpserver.ftplet.UserManager' that could not be found.
+Field userManager in br.com.upbox.ftp.utilsUsuarioDTO required a bean of type 'org.apache.ftpserver.ftplet.UserManager' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)

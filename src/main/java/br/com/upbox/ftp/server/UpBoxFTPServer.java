@@ -1,22 +1,16 @@
 package br.com.upbox.ftp.server;
 
-import br.com.upbox.ftp.ftplet.MyFtplet;
+import br.com.upbox.ftp.utils.UserManagerUtil;
 import org.apache.ftpserver.ConnectionConfigFactory;
 import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
 import org.apache.ftpserver.ftplet.FtpException;
-import org.apache.ftpserver.ftplet.Ftplet;
-import org.apache.ftpserver.ftplet.UserManager;
+import org.apache.ftpserver.ipfilter.SessionFilter;
 import org.apache.ftpserver.listener.ListenerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class UpBoxFTPServer implements FTPServerConstants {
     private static final Logger logger = LoggerFactory.getLogger(FtpServer.class);
@@ -27,8 +21,6 @@ public class UpBoxFTPServer implements FTPServerConstants {
     private FtpServer server;
     private static int port;
 
-    private UserManager userManager = new InMemoryUserManager();
-
     public UpBoxFTPServer() {
         port = 2112;
     }
@@ -38,7 +30,7 @@ public class UpBoxFTPServer implements FTPServerConstants {
         this.port = port;
     }
 
-    public boolean start() throws FtpException, IOException {
+    public boolean start() throws FtpException {
         serverFactory = new FtpServerFactory();
 
 
@@ -46,6 +38,8 @@ public class UpBoxFTPServer implements FTPServerConstants {
         ListenerFactory listenerFactory = new ListenerFactory();
         listenerFactory.setPort(port);
         listenerFactory.setIdleTimeout(60);
+//        listenerFactory.setSslConfiguration(sslConfig.createSslConfiguration());
+//        listenerFactory.setImplicitSsl(true);
 
 
         // Configurar conexão
@@ -54,14 +48,9 @@ public class UpBoxFTPServer implements FTPServerConstants {
         connectionConfigFactory.setMaxLogins(10);
         connectionConfigFactory.setMaxThreads(10);
 
-
-        Map<String, Ftplet> map = new HashMap<>();
-        map.put("myftplet", new MyFtplet());
-//        Settando as configurações no ServerFactory
-        serverFactory.setFtplets(map);
         serverFactory.addListener("default", listenerFactory.createListener());
         serverFactory.setConnectionConfig(connectionConfigFactory.createConnectionConfig());
-        serverFactory.setUserManager(userManager);
+        serverFactory.setUserManager(UserManagerUtil.getUserManager());
 
         server = serverFactory.createServer();
         try {
@@ -73,10 +62,21 @@ public class UpBoxFTPServer implements FTPServerConstants {
         return true;
     }
 
-
+//    private UserManager getUserManager() {
+//        PropertiesUserManagerFactory umf = new PropertiesUserManagerFactory();
+//        try {
+//            new File("myuser.properties").createNewFile();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        umf.setFile(new File("myuser.properties"));
+//        MyPasswordEncryptor passwordEncryptor = new MyPasswordEncryptor();
+//        umf.setPasswordEncryptor(passwordEncryptor);
+//        return umf.createUserManager();
+//    }
 
     public void stop() {
-        if (server != null && !server.isStopped()) {
+        if(server != null && !server.isStopped()) {
             server.stop();
             server = null;
         }
