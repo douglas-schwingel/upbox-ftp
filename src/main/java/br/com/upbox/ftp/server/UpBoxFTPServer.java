@@ -8,14 +8,12 @@ import org.apache.ftpserver.ftplet.FtpException;
 import org.apache.ftpserver.ftplet.Ftplet;
 import org.apache.ftpserver.ftplet.UserManager;
 import org.apache.ftpserver.listener.ListenerFactory;
-import org.apache.ftpserver.ssl.SslConfigurationFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,8 +27,7 @@ public class UpBoxFTPServer implements FTPServerConstants {
     private FtpServer server;
     private static int port;
 
-    @Autowired
-    private UserManager userManager;
+    private UserManager userManager = new InMemoryUserManager();
 
     public UpBoxFTPServer() {
         port = 2112;

@@ -100,7 +100,6 @@ public class InMemoryUserManager implements UserManager {
 
     @Override
     public void save(User user) throws FtpException {
-
     }
 
     @Override

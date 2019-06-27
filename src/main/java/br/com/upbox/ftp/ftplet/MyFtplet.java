@@ -9,6 +9,7 @@ import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.IOException;
 
 @Component
@@ -16,8 +17,7 @@ public class MyFtplet extends DefaultFtplet {
     private static final Logger logger = LoggerFactory.getLogger(MyFtplet.class);
     private static final Marker marker = MarkerFactory.getMarker("my-ftplet");
 
-    @Autowired
-    private InMemoryUserManager userManager;
+    private InMemoryUserManager userManager = new InMemoryUserManager();
 
     @Override
     public void init(FtpletContext ftpletContext) throws FtpException {
@@ -26,7 +26,12 @@ public class MyFtplet extends DefaultFtplet {
 
     @Override
     public FtpletResult onLogin(FtpSession session, FtpRequest request) throws FtpException, IOException {
-        logger.info(marker, "Usuario {} logado", session.getUser().getName());
+        User user = session.getUser();
+        if (!userManager.doesExist(user.getName())) {
+            logger.info(marker, "Usuario {} não existe. Criando...", user.getName());
+            userManager.setUser(user.getName(), user.getPassword());
+        }
+        logger.info(marker, "Usuario {} encontrado. Loggando...", user.getName());
         return super.onLogin(session, request);
     }
 
@@ -42,4 +47,14 @@ public class MyFtplet extends DefaultFtplet {
     public FtpletResult onDeleteStart(FtpSession session, FtpRequest request) throws FtpException, IOException {
         return super.onDeleteStart(session, request);
     }
+
+//    @Override
+//    public FtpletResult onUploadEnd(FtpSession session, FtpRequest request) throws FtpException, IOException {
+//        User user = session.getUser();
+//        String currentDir = session.getFileSystemView().getWorkingDirectory().getAbsolutePath();
+//        String fileName = request.getArgument();
+//
+//        File file = new File(user.getHomeDirectory() + currentDir + fileName);
+//        return super.onUploadStart(session, request);
+//    }
 }
