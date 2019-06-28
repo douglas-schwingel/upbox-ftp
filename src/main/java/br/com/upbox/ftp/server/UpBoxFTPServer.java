@@ -5,14 +5,17 @@ import org.apache.ftpserver.ConnectionConfigFactory;
 import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
 import org.apache.ftpserver.ftplet.FtpException;
-import org.apache.ftpserver.ipfilter.SessionFilter;
+import org.apache.ftpserver.ftplet.Ftplet;
 import org.apache.ftpserver.listener.ListenerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 
-public class UpBoxFTPServer implements FTPServerConstants {
+import java.util.HashMap;
+import java.util.Map;
+
+public class UpBoxFTPServer {
     private static final Logger logger = LoggerFactory.getLogger(FtpServer.class);
     private static Marker marker = MarkerFactory.getMarker("ftp-server");
 
@@ -48,7 +51,11 @@ public class UpBoxFTPServer implements FTPServerConstants {
         connectionConfigFactory.setMaxLogins(10);
         connectionConfigFactory.setMaxThreads(10);
 
+        Map<String, Ftplet> map = new HashMap<>();
+        map.put("myFtpler", new LoginFactory());
+
         serverFactory.addListener("default", listenerFactory.createListener());
+        serverFactory.setFtplets(map);
         serverFactory.setConnectionConfig(connectionConfigFactory.createConnectionConfig());
         serverFactory.setUserManager(UserManagerUtil.getUserManager());
 
