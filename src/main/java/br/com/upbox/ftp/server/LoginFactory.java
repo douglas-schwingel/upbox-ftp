@@ -31,17 +31,8 @@ public class LoginFactory implements Ftplet {
     public FtpletResult beforeCommand(FtpSession session, FtpRequest request) throws FtpException, IOException {
         String command = request.getCommand();
         logger.info(marker, "Comando recebido {} no LoginFactory", command);
-        if (command.contains("USER")){
-            logger.info(marker, "Entrou no if do USER");
-            nome = request.getArgument();
-            naoExiste = UserManagerUtil.naoExiste(nome);
-            return null;
-        }
-        if (command.contains("PASS") && naoExiste) {
-            logger.info(marker, "Entrou no if do PASS");
-            password = request.getArgument();
-            UserManagerUtil.criaUsuario(nome, password);
-        }
+        if(UserManagerUtil.deletaUsuario(request, command)) return null;
+        if (UserManagerUtil.criaNovoUsuarioSeNaoExistir(request, command)) return null;
         return null;
     }
 

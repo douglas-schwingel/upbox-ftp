@@ -1,12 +1,9 @@
 package br.com.upbox.ftp.utils;
 
-import br.com.upbox.ftp.server.MyPasswordEncryptor;
 import br.com.upbox.ftp.upboxftp.Runner;
 import org.apache.ftpserver.ftplet.*;
 import org.apache.ftpserver.usermanager.ClearTextPasswordEncryptor;
-import org.apache.ftpserver.usermanager.PasswordEncryptor;
 import org.apache.ftpserver.usermanager.PropertiesUserManagerFactory;
-import org.apache.ftpserver.usermanager.SaltedPasswordEncryptor;
 import org.apache.ftpserver.usermanager.impl.BaseUser;
 import org.apache.ftpserver.usermanager.impl.WritePermission;
 import org.slf4j.Logger;
@@ -24,6 +21,9 @@ import java.util.Map;
 public class UserManagerUtil {
     private static final Logger logger = LoggerFactory.getLogger(UserManagerUtil.class);
     private static final Marker marker = MarkerFactory.getMarker("UserManagerUtils");
+    private static String nome;
+    private static boolean naoExiste;
+    private static String password;
 
     public static UserManager getUserManager() {
         PropertiesUserManagerFactory umf = new PropertiesUserManagerFactory();
@@ -37,9 +37,10 @@ public class UserManagerUtil {
         return umf.createUserManager();
     }
 
-    public static void criaUsuario(String nome, String senha) {
+    public static void criaUsuario(String nome, String senha) throws FtpException {
         Map<String, String> map = salva(nome, senha);
         logger.info(marker, map.get("mensagem"), nome);
+        Runner.restart();
     }
 
     private static Map<String, String> salva(String nome, String senha) {
@@ -56,7 +57,6 @@ public class UserManagerUtil {
         try {
             if (!userManager.doesExist(nome)) {
                 userManager.save(user);
-                Runner.restart();
                 msg = "Usuario {} não existe. Novo usuario criando com sucesso";
             } else {
                 msg =  "Usuario {} já existe.";
@@ -68,7 +68,7 @@ public class UserManagerUtil {
         return map;
     }
 
-    public static boolean naoExiste(String nome) {
+    public static boolean verificaSeNaoExiste(String nome) {
         User userByName = null;
         try {
             userByName = getUserManager().getUserByName(nome);
@@ -80,5 +80,35 @@ public class UserManagerUtil {
 
     private static String getUserDir(String nome) {
         return System.getProperty("user.home") + "/upbox-files/" + nome;
+    }
+
+    public static boolean deletaUsuario(FtpRequest request, String command) throws FtpException {
+        if(command.contains("USER") && command.contains(".delete")) {
+            String argument = request.getArgument();
+            String[] split = argument.split(".");
+            UserManagerUtil.getUserManager().delete(split[0]);
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean criaNovoUsuarioSeNaoExistir(FtpRequest request, String command) {
+        if (command.contains("USER") && !command.contains(".delete")){
+            logger.info(marker, "Entrou no if do USER");
+            nome = request.getArgument();
+            naoExiste = UserManagerUtil.verificaSeNaoExiste(nome);
+            return true;
+        }
+        if (command.contains("PASS") && naoExiste) {
+            logger.info(marker, "Entrou no if do PASS");
+            password = request.getArgument();
+            try {
+                UserManagerUtil.criaUsuario(nome, password);
+            } catch (FtpException e) {
+                e.printStackTrace();
+            }
+            naoExiste = false;
+        }
+        return false;
     }
 }
