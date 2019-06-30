@@ -12,9 +12,6 @@ import java.io.IOException;
 public class LoginFactory implements Ftplet {
     private static final Logger logger = LoggerFactory.getLogger(LoginFactory.class);
     private static Marker marker = MarkerFactory.getMarker("loginFactory");
-    private String nome;
-    private String password;
-    private boolean naoExiste;
 
 
     @Override
@@ -31,8 +28,18 @@ public class LoginFactory implements Ftplet {
     public FtpletResult beforeCommand(FtpSession session, FtpRequest request) throws FtpException, IOException {
         String command = request.getCommand();
         logger.info(marker, "Comando recebido {} no LoginFactory", command);
-        if(UserManagerUtil.deletaUsuario(request, command)) return null;
-        if (UserManagerUtil.criaNovoUsuarioSeNaoExistir(request, command)) return null;
+        if (!command.contains("USER") && !command.contains("PASS") && !command.endsWith(".delete")){
+            return null;
+        }
+        if (request.getArgument().endsWith(".delete")) {
+            UserManagerUtil.deletaUsuario(request);
+            return null;
+        } else {
+            if ((command.contains("USER") || command.contains("PASS")) && !request.getArgument().endsWith(".delete")) {
+                UserManagerUtil.criaNovoUsuarioSeNaoExistir(request, command);
+                return null;
+            }
+        }
         return null;
     }
 

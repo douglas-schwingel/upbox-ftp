@@ -51,7 +51,14 @@ public class UserManagerUtil {
         user.setAuthorities(authorities);
         user.setName(nome);
         user.setPassword(senha);
-        user.setHomeDirectory(getUserDir(nome));
+        String pastaUsuario = getUserDir(nome);
+        user.setHomeDirectory(pastaUsuario);
+        try {
+            logger.info(marker, "Criando diretorio {}", pastaUsuario);
+            Runtime.getRuntime().exec("mkdir " + pastaUsuario);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Map<String, String> map = new HashMap<>();
         String msg = "";
         try {
@@ -79,21 +86,18 @@ public class UserManagerUtil {
     }
 
     private static String getUserDir(String nome) {
-        return System.getProperty("user.home") + "/upbox-files/" + nome;
+        return System.getProperty("user.dir") + "/upbox-files/" + nome;
     }
 
-    public static boolean deletaUsuario(FtpRequest request, String command) throws FtpException {
-        if(command.contains("USER") && command.contains(".delete")) {
+    public static void deletaUsuario(FtpRequest request) throws FtpException {
             String argument = request.getArgument();
-            String[] split = argument.split(".");
+            String[] split = argument.split(".delete");
+            logger.info(marker, "Entrando no delete usuario: {}", split[0]);
             UserManagerUtil.getUserManager().delete(split[0]);
-            return true;
-        }
-        return false;
     }
 
     public static boolean criaNovoUsuarioSeNaoExistir(FtpRequest request, String command) {
-        if (command.contains("USER") && !command.contains(".delete")){
+        if (command.contains("USER")){
             logger.info(marker, "Entrou no if do USER");
             nome = request.getArgument();
             naoExiste = UserManagerUtil.verificaSeNaoExiste(nome);
