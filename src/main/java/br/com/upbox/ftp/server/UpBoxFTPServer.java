@@ -20,9 +20,8 @@ public class UpBoxFTPServer {
     private static Marker marker = MarkerFactory.getMarker("ftp-server");
 
 
-    private FtpServerFactory serverFactory;
     private FtpServer server;
-    private static int port;
+    private int port;
 
     public UpBoxFTPServer() {
         port = 2112;
@@ -34,15 +33,13 @@ public class UpBoxFTPServer {
     }
 
     public boolean start() throws FtpException {
-        serverFactory = new FtpServerFactory();
+        FtpServerFactory serverFactory = new FtpServerFactory();
 
 
         // Configurar listener
         ListenerFactory listenerFactory = new ListenerFactory();
         listenerFactory.setPort(port);
         listenerFactory.setIdleTimeout(60);
-//        listenerFactory.setSslConfiguration(sslConfig.createSslConfiguration());
-//        listenerFactory.setImplicitSsl(true);
 
 
         // Configurar conexão
@@ -68,19 +65,6 @@ public class UpBoxFTPServer {
         }
         return true;
     }
-
-//    private UserManager getUserManager() {
-//        PropertiesUserManagerFactory umf = new PropertiesUserManagerFactory();
-//        try {
-//            new File("myuser.properties").createNewFile();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        umf.setFile(new File("myuser.properties"));
-//        MyPasswordEncryptor passwordEncryptor = new MyPasswordEncryptor();
-//        umf.setPasswordEncryptor(passwordEncryptor);
-//        return umf.createUserManager();
-//    }
 
     public void stop() {
         if(server != null && !server.isStopped()) {

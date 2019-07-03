@@ -11,31 +11,32 @@ import java.io.IOException;
 
 public class LoginFactory implements Ftplet {
     private static final Logger logger = LoggerFactory.getLogger(LoginFactory.class);
+    public static final String DELETE = ".delete";
     private static Marker marker = MarkerFactory.getMarker("loginFactory");
 
 
     @Override
     public void init(FtpletContext ftpletContext) throws FtpException {
-        logger.info(marker, "Inciando o LoginFacotry");
+        logger.info(marker, "Inciando o {}", "LoginFacotry");
     }
 
     @Override
     public void destroy() {
-
+        // compartamento padrão
     }
 
     @Override
     public FtpletResult beforeCommand(FtpSession session, FtpRequest request) throws FtpException, IOException {
         String command = request.getCommand();
         logger.info(marker, "Comando recebido {} no LoginFactory", command);
-        if (!command.contains("USER") && !command.contains("PASS") && !command.endsWith(".delete")){
+        if (!command.contains("USER") && !command.contains("PASS") && !command.endsWith(DELETE)){
             return null;
         }
-        if (request.getArgument().endsWith(".delete")) {
+        if (request.getArgument().endsWith(DELETE)) {
             UserManagerUtil.deletaUsuario(request);
             return null;
         } else {
-            if ((command.contains("USER") || command.contains("PASS")) && !request.getArgument().endsWith(".delete")) {
+            if ((command.contains("USER") || command.contains("PASS")) && !request.getArgument().endsWith(DELETE)) {
                 UserManagerUtil.criaNovoUsuarioSeNaoExistir(request, command);
                 return null;
             }

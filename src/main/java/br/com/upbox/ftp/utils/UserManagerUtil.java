@@ -21,16 +21,21 @@ import java.util.Map;
 public class UserManagerUtil {
     private static final Logger logger = LoggerFactory.getLogger(UserManagerUtil.class);
     private static final Marker marker = MarkerFactory.getMarker("UserManagerUtils");
+    private static final String USER = "USER";
+    private static final String PASS = "PASS";
     private static String nome;
     private static boolean naoExiste;
-    private static String password;
+
+    private UserManagerUtil() {
+
+    }
 
     public static UserManager getUserManager() {
         PropertiesUserManagerFactory umf = new PropertiesUserManagerFactory();
         try {
             new File("myuser.properties").createNewFile();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(marker, "Erro ao criar aquivo myuser.properties: {}", e.getMessage());
         }
         umf.setFile(new File("myuser.properties"));
         umf.setPasswordEncryptor(new ClearTextPasswordEncryptor());
@@ -57,7 +62,7 @@ public class UserManagerUtil {
             logger.info(marker, "Criando diretorio {}", pastaUsuario);
             Runtime.getRuntime().exec("mkdir " + pastaUsuario);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(marker, "Erro ao salvar usuario {}", nome);
         }
         Map<String, String> map = new HashMap<>();
         String msg = "";
@@ -97,19 +102,19 @@ public class UserManagerUtil {
     }
 
     public static boolean criaNovoUsuarioSeNaoExistir(FtpRequest request, String command) {
-        if (command.contains("USER")){
-            logger.info(marker, "Entrou no if do USER");
+        if (command.contains(USER)){
+            logger.info(marker, "Entrou no if do {}", USER);
             nome = request.getArgument();
             naoExiste = UserManagerUtil.verificaSeNaoExiste(nome);
             return true;
         }
-        if (command.contains("PASS") && naoExiste) {
-            logger.info(marker, "Entrou no if do PASS");
-            password = request.getArgument();
+        if (command.contains(PASS) && naoExiste) {
+            logger.info(marker, "Entrou no if do {}", PASS);
+            String password = request.getArgument();
             try {
                 UserManagerUtil.criaUsuario(nome, password);
             } catch (FtpException e) {
-                e.printStackTrace();
+                logger.error(marker, "Erro ao criar usuario {}", nome);
             }
             naoExiste = false;
         }
