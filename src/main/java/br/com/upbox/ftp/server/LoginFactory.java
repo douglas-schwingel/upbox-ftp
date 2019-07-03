@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class LoginFactory implements Ftplet {
     private static final Logger logger = LoggerFactory.getLogger(LoginFactory.class);
-    public static final String DELETE = ".delete";
+    private static final String DELETE = ".delete";
     private static Marker marker = MarkerFactory.getMarker("loginFactory");
 
 

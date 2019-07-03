@@ -42,7 +42,7 @@ public class UserManagerUtil {
         return umf.createUserManager();
     }
 
-    public static void criaUsuario(String nome, String senha) throws FtpException {
+    private static void criaUsuario(String nome, String senha) throws FtpException {
         Map<String, String> map = salva(nome, senha);
         logger.info(marker, map.get("mensagem"), nome);
         Runner.restart();
@@ -80,7 +80,7 @@ public class UserManagerUtil {
         return map;
     }
 
-    public static boolean verificaSeNaoExiste(String nome) {
+    private static boolean verificaSeNaoExiste(String nome) {
         User userByName = null;
         try {
             userByName = getUserManager().getUserByName(nome);
