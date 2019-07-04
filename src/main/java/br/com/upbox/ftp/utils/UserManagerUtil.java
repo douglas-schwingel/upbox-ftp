@@ -1,6 +1,7 @@
 package br.com.upbox.ftp.utils;
 
 import br.com.upbox.ftp.upboxftp.Runner;
+import org.apache.commons.io.FileUtils;
 import org.apache.ftpserver.ftplet.*;
 import org.apache.ftpserver.usermanager.ClearTextPasswordEncryptor;
 import org.apache.ftpserver.usermanager.PropertiesUserManagerFactory;
@@ -97,8 +98,15 @@ public class UserManagerUtil {
     public static void deletaUsuario(FtpRequest request) throws FtpException {
             String argument = request.getArgument();
             String[] split = argument.split(".delete");
+            String username = split[0];
             logger.info(marker, "Entrando no delete usuario: {}", split[0]);
-            UserManagerUtil.getUserManager().delete(split[0]);
+        String userDir = getUserDir(username);
+        try {
+            FileUtils.deleteDirectory(new File(userDir));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        UserManagerUtil.getUserManager().delete(username);
     }
 
     public static boolean criaNovoUsuarioSeNaoExistir(FtpRequest request, String command) {
